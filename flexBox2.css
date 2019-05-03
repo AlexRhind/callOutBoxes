@@ -1,0 +1,142 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+
+/*Flex model */
+/*Control the structure of the content boxes here*/
+
+.flex-container {
+	display: flex;
+	flex-wrap: wrap;
+	position: relative;
+}
+
+.flex-container>div.holder { /*where div is a child (>) of the class flex-container*/
+	width: 20%;
+	min-width: 250px;
+	max-width: 320px;
+	margin: 20px; 
+	font-kerning: normal;/*kern and ligature set*/
+	text-rendering: optimizeLegibility;
+	font-variant-ligatures: common-ligatures;
+	-webkit-font-smoothing: antialiased;
+}
+
+
+/*Read More styles*/
+.readMore {
+	font: 1.3rem Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", "serif";
+	line-height: 1.6rem;
+	font-weight: bold;
+	color: #3C3939;
+	border-top: solid 3px #249EA9;	
+	background-color:#E7E7E2;
+	padding: 10px 20px 5px 20px;
+	position: relative;
+	overflow: hidden;
+}
+.readMore p::after {
+	content: "\279C  Read more..."; /*Use escaped unicode ch for content css*/
+	font-size: 1.25rem;
+	line-height: 1.6rem;
+	padding-top: 0.4rem;
+	font-weight: bold;
+	color: #22457B;
+	display: block;
+}
+.readMore:hover {background-color: #D4D4CC;}
+.readMore img  {
+	z-index: 0;
+	width: 120%;
+	margin: -10px 0 -5px -20px;
+} 
+
+/*Picture Story styles*/
+.picStory {
+	font: 1.3rem Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", "serif";
+	line-height: 1.6rem;
+	font-weight: bold;
+	color: white;
+	border-top: solid 3px #f9b233;	
+	background-color:#3C3939;
+	padding: 10px 20px 5px 20px;
+	position: relative;
+	overflow: hidden;
+}
+.picStory p::before {
+	content: url(img/camera.svg)  "\00A0 \00A0 Photography"; /*Use escaped unicode ch for content css \00A0 is en quad &nbsp*/
+	font-size: 1.25rem;
+	line-height: 2rem;
+	padding-bottom: 0.4rem;
+	font-weight: bold;
+	color: #f9b233;
+	display: block;
+}
+.picStory:hover {background-color: black}
+.picStory img  {
+	z-index: 0;
+	width: 120%;
+	margin: -10px 0 -8px -20px;
+} 
+
+/*Alternative Picture Story styles*/
+.picStoryAlt {
+	border-top: solid 3px #f9b233;	
+	background: no-repeat center/240% url("img/lights.jpg") #3C3939;
+	height: 360px;
+}
+.picStoryAlt>div {
+	font: 1.3rem Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", "serif";
+	line-height: 1.6rem;
+	font-weight: bold;
+	color: white;
+	background: black;
+	opacity: 0.80;
+	padding: 10px 20px 5px 20px;
+	align-self: flex-end;
+}
+.picStoryAlt p::before {
+	content: url(img/camera.png)  "\00A0 \00A0 Photography"; /*Use escaped unicode ch for content css \00A0 is en quad &nbsp*/
+	font-size: 1.25rem;
+	line-height: 2rem;
+	padding-bottom: 0.4rem;
+	font-weight: bold;
+	color: #f9b233;
+	display: block;
+}
+.picStoryAlt:hover>div {opacity: 1.0} 
+
+
+.cornerAd {
+	position: absolute;
+	z-index: 1;
+	width: 100px;
+	height: 100px;
+	overflow: hidden;
+}
+.cornerAd a {
+    font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    letter-spacing: 3px;
+    padding: 40px 60px 6px 60px;
+    max-height: 70px;
+    background-color: #22457B;
+	opacity: 0.85;
+    display: block;
+    position: absolute;
+    z-index: 1;
+    left: -62px;
+    top: -12px;
+    -ms-transform: rotate(-45deg); 
+    -webkit-transform: rotate(-45deg); 
+    -o-transform: rotate(-45deg); 
+    transform: rotate(-45deg); 
+}
+.cornerAd a:hover {opacity: 1.0}
+
